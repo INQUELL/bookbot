@@ -8,7 +8,7 @@ def wordCount():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
         wordCount = file_contents.split()
-        print("Word count is: ", len(wordCount))
+        print(len(wordCount), " words found in this document")
 
 def letterCount():
     with open("books/frankenstein.txt") as f:
@@ -22,11 +22,27 @@ def letterCount():
                 letters_dict[letter] += 1
             else:
                 letters_dict[letter] = 1
-        print(letters_dict)
+        return(letters_dict)
+
+# def dictNum(dict):
+#     return dict.values()
+
+def sortMe(dict):
+    # unsortedDict = letterCount()
+    # unsortedDict.sort(reverse=True, key=dictNum)
+    # print(unsortedDict)
+    
+    
+
+
+    pass
+
 
 def main():
-    letterCount()
-    pass
+    print("=== Begin report of books/frankenstein.txt ===")
+    wordCount()
+
+    print("=== End of report ===")
 
 main()
 
