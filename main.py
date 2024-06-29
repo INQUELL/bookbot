@@ -10,21 +10,22 @@ def wordCount():
         wordCount = file_contents.split()
         print("Word count is: ", len(wordCount))
 
-def characterCount():
+def letterCount():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
         file_lower = file_contents.lower()
-        letters_count = {}
-        letter_num = 0
+
+        letters_dict = {}
+
         for letter in file_lower:
-            
-            letter_num += 1
-            letters_count[letter] = letter_num
-        print("Letter count is: ", letters_count)
+            if letter in letters_dict:
+                letters_dict[letter] += 1
+            else:
+                letters_dict[letter] = 1
+        print(letters_dict)
 
 def main():
-    wordCount()
-    characterCount()
+    letterCount()
     pass
 
 main()
